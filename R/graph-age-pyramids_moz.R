@@ -71,16 +71,16 @@ moz_plhiv_female <- moz_national_full %>%
 # begin ggplot
 
 ggplot(moz_plhiv_female, aes(x = mean, y = age_label), stat = mean) +
-  geom_bar(stat = "identity", fill = "#C25432") 
+  geom_bar(stat = "identity", fill = "#C25432")
 
-# subset data 
+# subset data
 moz_plhiv_male <- moz_national_full %>%
   filter(indicator == "plhiv" & sex == "male")
 
 # begin ggplot
 
 ggplot(moz_plhiv_male, aes(x = mean, y = age_label), stat = mean) +
-  geom_bar(stat = "identity", fill = "#004851") 
+  geom_bar(stat = "identity", fill = "#004851")
 
 
 
@@ -91,17 +91,17 @@ moz_plhiv <- moz_national_full %>%
 
 
 basic_plot <-  ggplot(
-  moz_plhiv, 
+  moz_plhiv,
   aes(
-    x = age_label, 
-    fill = sex, 
+    x = age_label,
+    fill = sex,
     y = ifelse(
-      test = sex == "male", 
-      yes = -mean, 
+      test = sex == "male",
+      yes = -mean,
       no = mean
     )
   )
-) + 
+) +
   scale_fill_manual(values = c("#C25432", "#004851")) +
   geom_bar(stat = "identity")
 
@@ -109,15 +109,15 @@ basic_plot
 
 population_pyramid <- basic_plot +
   scale_y_continuous(
-    labels = abs, 
+    labels = abs,
     limits = max(moz_plhiv$mean) * c(-1,1)
-  ) + 
-  coord_flip() + 
+  ) +
+  coord_flip() +
   theme_minimal() +
   labs(
-    x = "Age", 
-    y = "Population", 
-    fill = "Sex", 
+    x = "Age",
+    y = "Population",
+    fill = "Sex",
     title = "Total PLHIV"
   )
 
@@ -130,32 +130,32 @@ moz_unaware_status <- moz_national_full %>%
 
 
 basic_plot <-  ggplot(
-  moz_unaware_status, 
+  moz_unaware_status,
   aes(
-    x = age_label, 
-    fill = sex, 
+    x = age_label,
+    fill = sex,
     y = ifelse(
-      test = sex == "male", 
-      yes = -mean, 
+      test = sex == "male",
+      yes = -mean,
       no = mean
     )
   )
-) + 
+) +
   geom_bar(stat = "identity")
 
 basic_plot
 
 population_pyramid <- basic_plot +
   scale_y_continuous(
-    labels = abs, 
+    labels = abs,
     limits = max(moz_unaware_status$mean) * c(-1,1)
-  ) + 
-  coord_flip() + 
+  ) +
+  coord_flip() +
   theme_minimal() +
   labs(
-    x = "Age", 
-    y = "Proportion", 
-    fill = "Sex", 
+    x = "Age",
+    y = "Proportion",
+    fill = "Sex",
     title = "Percent of PLHIV unaware of status"
   )
 
@@ -169,32 +169,32 @@ moz_notonART <- moz_national_full %>%
 
 
 basic_plot <-  ggplot(
-  moz_notonART, 
+  moz_notonART,
   aes(
-    x = age_label, 
-    fill = sex, 
+    x = age_label,
+    fill = sex,
     y = ifelse(
-      test = sex == "male", 
-      yes = -mean, 
+      test = sex == "male",
+      yes = -mean,
       no = mean
     )
   )
-) + 
+) +
   geom_bar(stat = "identity")
 
 basic_plot
 
 population_pyramid <- basic_plot +
   scale_y_continuous(
-    labels = abs, 
+    labels = abs,
     limits = max(moz_notonART$mean) * c(-1,1)
-  ) + 
-  coord_flip() + 
+  ) +
+  coord_flip() +
   theme_minimal() +
   labs(
-    x = "Age", 
-    y = "Proportion", 
-    fill = "Sex", 
+    x = "Age",
+    y = "Proportion",
+    fill = "Sex",
     title = "Percent of PLHIV not on ART"
   )
 
@@ -208,32 +208,32 @@ moz_untreatednum <- moz_national_full %>%
 
 
 basic_plot <-  ggplot(
-  moz_untreatednum, 
+  moz_untreatednum,
   aes(
-    x = age_label, 
-    fill = sex, 
+    x = age_label,
+    fill = sex,
     y = ifelse(
-      test = sex == "male", 
-      yes = -mean, 
+      test = sex == "male",
+      yes = -mean,
       no = mean
     )
   )
-) + 
+) +
   geom_bar(stat = "identity", fill = c(""))
 
 basic_plot
 
 population_pyramid <- basic_plot +
   scale_y_continuous(
-    labels = abs, 
+    labels = abs,
     limits = max(moz_untreatednum$mean) * c(-1,1)
-  ) + 
-  coord_flip() + 
+  ) +
+  coord_flip() +
   theme_minimal() +
   labs(
-    x = "Age", 
-    y = "Population", 
-    fill = "Sex", 
+    x = "Age",
+    y = "Population",
+    fill = "Sex",
     title = "Number of PLHIV not on ART"
   )
 
@@ -246,41 +246,41 @@ population_pyramid
 # output: agepop pyramid
 
 generate_pyramid <- function(indicator_input, pop_or_prop, title_input){
-  
+
   df <- moz_national_full %>%
     filter(indicator == indicator_input)
-  
+
   basic_plot <-  ggplot(
-    df, 
+    df,
     aes(
-      x = age_label, 
-      fill = sex, 
+      x = age_label,
+      fill = sex,
       y = ifelse(
-        test = sex == "male", 
-        yes = -mean, 
+        test = sex == "male",
+        yes = -mean,
         no = mean
       )
     )
-  ) + 
+  ) +
     scale_fill_manual(values = c("#C25432", "#004851")) +
     geom_bar(stat = "identity")
-  
+
   p <- basic_plot +
     scale_y_continuous(
-      labels = abs, 
+      labels = abs,
       limits = max(df$mean) * c(-1,1)
-    ) + 
-    coord_flip() + 
+    ) +
+    coord_flip() +
     theme_minimal() +
     labs(
-      x = "Age", 
-      y = pop_or_prop, 
-      fill = "Sex", 
+      x = "Age",
+      y = pop_or_prop,
+      fill = "Sex",
       title = title_input
     )
-  
+
  return(p)
-  
+
 }
 
 
@@ -292,4 +292,4 @@ generate_pyramid <- function(indicator_input, pop_or_prop, title_input){
 # trim axis edges to fit visual range
 # add commas to numbers
 # eventually: add values into graph, rounded
-# check 508 compliance
+# check 508 compliance; standardize with style guide

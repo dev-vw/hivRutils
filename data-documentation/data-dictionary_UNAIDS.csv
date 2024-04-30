@@ -1,0 +1,52 @@
+﻿element,description
+year,Year of estimate
+ISO_alpha-3,Three-letter ISO code
+country_name,Text of full country name
+pct_prev_adults_15-49,Adults prevalence 15-49 (%)
+pct_prev_adults_15-49_lower,"Adults prevalence 15-49, lower bound (%)"
+pct_prev_adults_15-49_upper,"Adults prevalence 15-49, upper bound (%)"
+pct_prev_women_15-24,Young women prevalence 15-24
+pct_prev_women_15-24_lower,"Young women prevalence 15-24, lower bound"
+pct_prev_women_15-24_upper,"Young women prevalence 15-24, upper bound"
+pct_prev_men_15-24,Young men prevalence 15-24
+pct_prev_men_15-24_lower,"Young men prevalence 15-24, lower bound"
+pct_prev_men_15-24_upper,"Young men prevalence 15-24, upper bound"
+num_deaths_all,AIDS-related deaths among adults and children
+num_deaths_all_lower,"AIDS-related deaths among adults and children, lower bound"
+num_deaths_all_upper,"AIDS-related deaths among adults and children, upper bound"
+num_deaths_children,AIDS-related deaths among children (0-14)
+num_deaths_children_lower,"AIDS-related deaths among children (0-14), lower bound"
+num_deaths_children_upper,"AIDS-related deaths among children (0-14), upper bound"
+num_deaths_adults,AIDS-related deaths among adults (15+)
+num_deaths_adults_lower,"AIDS-related deaths among adults (15+), lower bound"
+num_deaths_adults_upper,"AIDS-related deaths among adults (15+), upper bound"
+plhiv_00-14,Estimated children living with HIV (0-14)
+plhiv_00-14_lower,"Estimated children living with HIV (0-14), lower bound"
+plhiv_00-14_upper,"Estimated children living with HIV (0-14), upper bound"
+plhiv_women_15+,Estimated women living with HIV (15+)
+plhiv_women_15+_lower,"Estimated women living with HIV (15+), lower bound"
+plhiv_women_15+_upper,"Estimated women living with HIV (15+), upper bound"
+plhiv_15+,Estimated adults living with HIV (15+)
+plhiv_15+_lower,"Estimated adults living with HIV (15+), lower bound"
+plhiv_15+_upper,"Estimated adults living with HIV (15+), upper bound"
+plhiv_all,Estimated adults and children living with HIV
+plhiv_all_lower,"Estimated adults and children living with HIV, lower bound"
+plhiv_all_upper,"Estimated adults and children living with HIV, upper bound"
+incd_adults_15-49,Adults (15-49) incidence per 1000 uninfected population
+incd_adults_15-49_lower,"Adults (15-49) incidence per 1000 uninfected population, lower bound"
+incd_adults_15-49_upper,"Adults (15-49) incidence per 1000 uninfected population, upper bound"
+incd_all,All ages incidence per 1000 uninfected population
+incd_all_lower,"All ages incidence per 1000 uninfected population, lower bound"
+incd_all_upper,"All ages incidence per 1000 uninfected population, upper bound"
+women_needARV,Pregnant women needing ARVs for preventing MTCT
+women_needARV_lower,"Pregnant women needing ARVs for preventing MTCT, lower bound"
+women_needARV_upper,"Pregnant women needing ARVs for preventing MTCT, upper bound"
+new_infections_00-14,Children (0-14) newly infected with HIV
+new_infections_00-14_lower,"Children (0-14) newly infected with HIV, lower bound"
+new_infections_00-14_upper,"Children (0-14) newly infected with HIV, upper bound"
+new_infections_15+,Adults (15+) newly infected with HIV
+new_infections_15+_lower,"Adults (15+) newly infected with HIV, lower bound"
+new_infections_15+_upper,"Adults (15+) newly infected with HIV, upper bound"
+new_infections_all,Adults and children newly infected with HIV
+new_infections_all_lower,"Adults and children newly infected with HIV, lower bound"
+new_infections_all_upper,"Adults and children newly infected with HIV, upper bound"
