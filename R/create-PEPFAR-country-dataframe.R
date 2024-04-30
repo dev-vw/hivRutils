@@ -112,24 +112,12 @@ naomi_countries <- c("Angola",
                      "Zambia",
                      "Zimbabwe")
 
+# OR: could pull this from
+
 # store UNAIDS countries ----
 
-url <- "https://www.unaids.org/sites/default/files/media_asset/HIV_estimates_from_1990-to-present.xlsx"
+### will pull this from UNAIDS dataframe TBD
 
-# Download the Excel file
-download.file(url, "HIV_estimates_from_1990-to-present.xlsx", mode = "wb")
-
-# Read the first sheet of the downloaded Excel file into R
-
-hiv_estimates_by_area <- read_excel("HIV_estimates_from_1990-to-present.xlsx",
-                                    sheet = 2,
-                                    range = "A5:AY5980")
-
-hiv_estimates_by_area <- hiv_estimates_by_area %>%
-  rename(year = "...1", area = "...3")
-
-hiv_estimates_2022 <- hiv_estimates_by_area %>%
-  filter(year == "2022")
 
 # import ISO abbrevs
 
