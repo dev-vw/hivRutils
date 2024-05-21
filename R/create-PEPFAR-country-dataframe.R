@@ -1,7 +1,4 @@
-# this is a script that pulls in ALL country ISO abbrevs and then tags countries that:
-## 1) are PEPFAR countries
-## 2) have UNAIDS data
-## 3) have Naomi data
+# this is a script that pulls in ALL country ISO abbrevs and regional categories for PEPFAR countries
 
 # load packages
 
@@ -92,7 +89,6 @@ western_hemisphere_region <- data.frame(western_hemisphere_region) %>%
   rename(country_name = western_hemisphere_region)
 
 pepfar_countries <- rbind(pepfar_countries, asia_region, west_africa_region, western_hemisphere_region)
-
 
 
 # import ISO abbrevs ----
